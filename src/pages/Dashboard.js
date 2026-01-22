@@ -20,7 +20,11 @@ const Dashboard = () => {
         setLoading(true);
         setReply('');
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/unick-ai', { prompt });
+           const res = await axios.post(
+            `${import.meta.env.VITE_API_URL}/api/auth/unick-ai`,
+               { prompt }
+           );
+
             setReply(res.data.reply);
         } catch (err) {
             setReply("Sorry, there are some technical issues. Please try again later!");
