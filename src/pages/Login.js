@@ -12,10 +12,11 @@ const Login = () => {
     e.preventDefault();
 
     try {
+        
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/login` ,
-        { email, password }
-      );
+       "https://demo-project-production-a936.up.railway.app/api/auth/login",
+       { email, password }
+     );
 
       alert(res.data.msg);
       localStorage.setItem("user", JSON.stringify(res.data.user));

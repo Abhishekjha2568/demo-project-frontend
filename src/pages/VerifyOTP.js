@@ -11,11 +11,11 @@ const VerifyOTP = () => {
   const handleVerify = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/verify-otp`,
-        { email, otp }
-      );
+    try {  
+       const res = await axios.post(
+           "https://demo-project-production-a936.up.railway.app/api/auth/verify-otp",
+            { email, otp }
+        );
 
       alert(res.data.msg);
       navigate("/login");

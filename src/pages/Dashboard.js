@@ -17,10 +17,11 @@ const Dashboard = () => {
       setLoading(true);
       setReply("");
 
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/unick-ai`,
-        { prompt }
-      );
+    const res = await axios.post(
+      ` https://demo-project-production-a936.up.railway.app/api/auth/unick-ai`,
+       { prompt }
+        );
+
 
       setReply(res.data.reply);
     } catch (err) {

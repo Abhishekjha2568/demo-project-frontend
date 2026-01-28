@@ -34,7 +34,7 @@ const Signup = () => {
 
 
       alert(res.data.msg || "Signup successful");
-      navigate("/verify-otp");
+      navigate("/verify-otp", { state: { email: formData.email }});
     } catch (err) {
       alert(
         err?.response?.data?.msg ||
